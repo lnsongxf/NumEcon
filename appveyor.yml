@@ -1,0 +1,9 @@
+# Not a C# project
+build: off
+
+install:
+- C:\Python37\python.exe -m pip install -r requirements.txt"
+- C:\Python37\python.exe -m pip install -e .
+
+test_script:
+- C:\Python37\python.exe -m pytest
