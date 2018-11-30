@@ -1,13 +1,13 @@
-language: python
-python: 3.7
-
 matrix:
   include:
-    - name: Linux
+    - language: python
+      python: 3.7
+      name: Linux
       os: linux
       dist: xenial
       sudo: true
-    - name: OS X
+    - language: generic
+      name: OS X
       os: osx
       before_install:
         - brew update && brew install python3
