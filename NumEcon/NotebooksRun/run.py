@@ -9,11 +9,13 @@ import webbrowser
 
 
 def open_binder(path="NumEcon/Notebooks"):
+    """ """
     url = "https://mybinder.org/v2/gh/NumEconCopenhagen/NumEcon/master"
     webbrowser.open_new_tab(f"{url}?filepath={path}")
 
 
 def jupyter_notebook(path=None):
+    """ """
     notebook_dir = resource_filename(__package__.split(".")[0], "Notebooks")
     if path:
         copy_tree(notebook_dir, path)
@@ -26,6 +28,7 @@ def jupyter_notebook(path=None):
 
 
 def run_notebook(path=None):
+    """ """
     try:
         if path:
             run_cmd(f"python -mnotebook --notebook-dir={path}")
@@ -36,4 +39,5 @@ def run_notebook(path=None):
 
 
 def run_cmd(cmd):
+    """ """
     return run(split(cmd))
