@@ -1,4 +1,7 @@
 click
+m2r
 notebook
 pytest
 pytest-runner
+sphinx
+sphinx_click
