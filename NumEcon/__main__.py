@@ -15,7 +15,7 @@ def cli():
 def notebook(ctx, binder, path, temp):
     if not binder or path or temp:
         click.echo(ctx.get_help())
-        
+
     if binder:
         run.open_binder()
 
