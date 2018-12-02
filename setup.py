@@ -28,7 +28,7 @@ class BlackCommand(distutils.cmd.Command):
 
     def run(self):
         """Run command."""
-        command = "python -mblack setup.py NumEcon tests"
+        command = f"python -mblack setup.py {self.distribution.get_name()} tests"
 
         self.announce(f"Running command: {command}", level=distutils.log.INFO)
         subprocess.check_call(shlex.split(command))
@@ -82,7 +82,7 @@ class WatchCommand(distutils.cmd.Command):
     def run(self):
         event_handler = PipWatch("*.py")
         observer = observers.Observer()
-        observer.schedule(event_handler, "NumEcon", recursive=True)
+        observer.schedule(event_handler, self.distribution.get_name(), recursive=True)
         observer.start()
         try:
             while True:
