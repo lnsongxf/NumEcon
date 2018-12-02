@@ -28,7 +28,7 @@ class BlackCommand(distutils.cmd.Command):
 
     def run(self):
         """Run command."""
-        command = "python -mblack NumEcon tests"
+        command = "python -mblack setup.py NumEcon tests"
 
         self.announce(f"Running command: {command}", level=distutils.log.INFO)
         subprocess.check_call(shlex.split(command))
@@ -59,9 +59,11 @@ class DocsCommand(distutils.cmd.Command):
         self.announce(f"Running command: {command}", level=distutils.log.INFO)
         subprocess.check_call(shlex.split(command), cwd="docs")
 
+
 class PipWatch(events.PatternMatchingEventHandler):
     def on_any_event(self, event):
-        subprocess.check_call(shlex.split('pip install .'))
+        subprocess.check_call(shlex.split("pip install ."))
+
 
 class WatchCommand(distutils.cmd.Command):
     """A custom command to format python code"""
@@ -78,15 +80,16 @@ class WatchCommand(distutils.cmd.Command):
         pass
 
     def run(self):
-        event_handler = PipWatch('*.py')
+        event_handler = PipWatch("*.py")
         observer = observers.Observer()
-        observer.schedule(event_handler, 'NumEcon', recursive=True)
+        observer.schedule(event_handler, "NumEcon", recursive=True)
         observer.start()
         try:
             while True:
                 time.sleep(5)
         except KeyboardInterrupt:
             observer.stop()
+
 
 class JupyterCommand(distutils.cmd.Command):
     description = "Jupyter"
@@ -101,12 +104,14 @@ class JupyterCommand(distutils.cmd.Command):
         pass
 
     def run(self):
-        try:
-            threading.Thread(target = lambda: subprocess.run(shlex.split('jupyter notebook NumEcon/Notebooks'))).start()
-            threading.Thread(target = lambda: subprocess.run(shlex.split('python setup.py watch'))).start()
-        except KeyboardInterrupt:
-            pass
-
+        threading.Thread(
+            target=lambda: subprocess.run(
+                shlex.split("jupyter notebook NumEcon/Notebooks")
+            )
+        ).start()
+        threading.Thread(
+            target=lambda: subprocess.run(shlex.split("python setup.py watch"))
+        ).start()
 
 
 setuptools.setup(
@@ -116,5 +121,10 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     package_data={"NumEcon": ["Notebooks/*"]},
     entry_points={"console_scripts": ["NumEcon=NumEcon.__main__:cli"]},
-    cmdclass={"black": BlackCommand, "docs": DocsCommand, "jupyter": JupyterCommand, "watch": WatchCommand},
+    cmdclass={
+        "black": BlackCommand,
+        "docs": DocsCommand,
+        "jupyter": JupyterCommand,
+        "watch": WatchCommand,
+    },
 )
