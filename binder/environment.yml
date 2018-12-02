@@ -2,7 +2,7 @@ channels:
   - damianavila82
   - conda-forge
 dependencies:
-  - python
+  - python=3.7.1
   - watchdog 
   - requests
   - numba
