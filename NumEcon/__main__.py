@@ -9,40 +9,51 @@ def cli():
 
 @cli.group("Notebook")
 def notebook():
+    """Run NumEcons notebooks locally and with mybinder.org"""
     pass
 
 
 @notebook.command("MyBinder")
-@click.option("-i", "--ipynb", type=click.Path())
+@click.option(
+    "-i",
+    "--ipynb",
+    type=click.Path(),
+    help="Path to ipython notebook within the Notebook directory",
+)
 def mybinder(ipynb=None):
+    """Run NumEcons notebook on mybinder.org.
+    
+    Your default browser will try to open a new tab or a new window. 
+    """
     _run.open_binder(ipynb=ipynb)
 
 
 @notebook.command("Run")
-@click.option("-i", "--ipynb", type=click.Path())
-@click.option("-p", "--path", type=click.Path(exists=True))
+@click.option(
+    "-i",
+    "--ipynb",
+    type=click.Path(),
+    help="Path to ipython notebook within the Notebook directory",
+)
+@click.option(
+    "-p",
+    "--path",
+    type=click.Path(exists=True),
+    help="Will copy all NumEcons notebooks to this path, and open a jupyter notebook at the location",
+)
 def run(ipynb=None, path=None):
+    """Run jupyter notebook locally.
+    
+    Your default browser will try to open a new tab or a new window."""
     _run.jupyter_notebook(path, ipynb)
 
 
-# @cli.command()
-# @click.option("-b", "--binder", is_flag=True)
-# @click.option("-p", "--path", type=click.Path(exists=True))
-# @click.option("-t", "--temp", is_flag=True)
-# @click.option("-f", "--file", type=click.Path(exists=True))
-# @click.pass_context
-# def notebook(ctx, binder, path, temp):
-#     if not binder or path or temp:
-#         click.echo(ctx.get_help())
-
-#     if binder:
-#         run.open_binder()
-
-#     if path:
-#         run.jupyter_notebook(path)
-
-#     if temp:
-#         run.jupyter_notebook()
+@notebook.command("List")
+def list_notebooks():
+    """Lists all available notebooks."""
+    click.echo("The following notebooks are available:")
+    for i in _run.notebooks_list():
+        click.echo(i)
 
 
 if __name__ == "__main__":

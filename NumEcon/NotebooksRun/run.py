@@ -48,3 +48,9 @@ def run_notebook(path=None):
 def run_cmd(cmd):
     """ """
     return run(split(cmd))
+
+
+def notebooks_list(path=None):
+    if not path:
+        path = resource_filename(__package__.split(".")[0], "Notebooks")
+    return os.listdir(path)
