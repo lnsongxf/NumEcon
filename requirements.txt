@@ -1,3 +1,4 @@
+black
 click
 m2r
 notebook
