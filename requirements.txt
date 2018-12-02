@@ -6,3 +6,4 @@ pytest
 pytest-runner
 sphinx
 sphinx_click
+watchdog
