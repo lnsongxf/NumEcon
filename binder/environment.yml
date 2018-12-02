@@ -1,0 +1,17 @@
+channels:
+  - damianavila82
+  - conda-forge
+dependencies:
+  - python
+  - requests
+  - numba
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn  
+  - ipywidgets
+  - rise
+  - pip:
+    - jupyter-contrib-nbextensions
+    - git+https://github.com/NumEconCopenhagen/NumEcon
