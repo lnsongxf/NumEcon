@@ -1,6 +1,7 @@
 ================
 ``NotebooksRun``
 ================
+.. automodule:: NumEcon.NotebooksRun
 
 ``NumEcon.NotebooksRun.run`` module
 --------------------------------

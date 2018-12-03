@@ -1,3 +1,6 @@
+"""
+Run NumEcon's notebooks locally and remotely.
+"""
 from distutils.dir_util import copy_tree
 from pkg_resources import resource_filename
 from shlex import split
@@ -9,7 +12,13 @@ import webbrowser
 
 
 def open_binder(path="NumEcon/Notebooks", ipynb=None):
-    """ """
+    """Open NumEcons on mybinder.org using default browser.
+    
+    args:
+        path(:obj:`str`): path to where the notebook should be opened.
+        ipynb(:obj:`str`): if specified mybinder will open the specified notebook.
+            Should be relative to `path`
+    """
     url = f"https://mybinder.org/v2/gh/NumEconCopenhagen/NumEcon/master?filepath={path}"
     if ipynb:
         url = os.path.join(url, ipynb)
@@ -46,7 +55,11 @@ def run_notebook(path=None):
 
 
 def run_cmd(cmd):
-    """ """
+    """Run system command.
+    
+    args:
+        cmd(:obj:`str`): Runs as system command using subprocess.
+    """
     return run(split(cmd))
 
 
