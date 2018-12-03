@@ -1,6 +1,3 @@
-Welcome to Pydst's documentation!
-=================================
-
 .. mdinclude:: ../README.md
 
 .. toctree::
