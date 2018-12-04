@@ -57,7 +57,10 @@ class DocsCommand(distutils.cmd.Command):
             shutil.rmtree("docs/_build")
 
         self.announce(f"Running command: {command}", level=distutils.log.INFO)
-        subprocess.check_call(shlex.split(command), cwd="docs")
+        if os.name == 'nt':
+            subprocess.check_call(shlex.split(command), cwd="docs", shell=True)
+        else:
+            subprocess.check_call(shlex.split(command), cwd="docs")
 
 
 class PipWatch(events.PatternMatchingEventHandler):
