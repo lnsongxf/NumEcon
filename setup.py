@@ -109,7 +109,7 @@ class JupyterCommand(distutils.cmd.Command):
     def run(self):
         threading.Thread(
             target=lambda: subprocess.run(
-                shlex.split("jupyter notebook NumEcon/Notebooks")
+                shlex.split("jupyter notebook numecon/Notebooks")
             )
         ).start()
         threading.Thread(
@@ -118,12 +118,12 @@ class JupyterCommand(distutils.cmd.Command):
 
 
 setuptools.setup(
-    name="NumEcon",
+    name="numecon",
     version="0.1.0",
     author="Jakob Jul Elben, Jeppe Druedahl",
     packages=setuptools.find_packages(),
-    package_data={"NumEcon": ["Notebooks/*", "Notebooks/images/*"]},
-    entry_points={"console_scripts": ["NumEcon=NumEcon.__main__:cli"]},
+    package_data={"numecon": ["Notebooks/*", "Notebooks/images/*"]},
+    entry_points={"console_scripts": ["numecon=numecon.__main__:cli"]},
     cmdclass={
         "black": BlackCommand,
         "docs": DocsCommand,

@@ -1,2 +1,2 @@
-"""Module to easily run NumEcons notebooks locally, and remotely."""
+"""Module to easily run numecons notebooks locally, and remotely."""
 from . import run

@@ -2,6 +2,6 @@
 ``Cli(__main__)``
 =================
 
-.. click:: NumEcon.__main__:cli
-   :prog: NumEcon
+.. click:: numecon.__main__:cli
+   :prog: numecon
    :show-nested:

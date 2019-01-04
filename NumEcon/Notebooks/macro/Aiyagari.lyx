@@ -150,7 +150,7 @@ vspace{-2mm}}
 
 
 \backslash
-subtitle{NumEcon} 
+subtitle{numecon} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -422,7 +422,7 @@ Solve an Aiyagari model numerically (using Python)
 \begin_layout Itemize
 
 \series bold
-NumEcon module
+numecon module
 \series default
  (under construction)
 \end_layout
@@ -437,7 +437,7 @@ Source files:
 \begin_inset CommandInset href
 LatexCommand href
 name "GitHub.com"
-target "https://github.com/JeppeDruedahl/NumEcon"
+target "https://github.com/JeppeDruedahl/numecon"
 literal "false"
 
 \end_inset
@@ -454,7 +454,7 @@ Interactive version:
 \begin_inset CommandInset href
 LatexCommand href
 name "MyBinder.org"
-target "https://mybinder.org/v2/gh/JeppeDruedahl/NumEcon/master"
+target "https://mybinder.org/v2/gh/JeppeDruedahl/numecon/master"
 literal "false"
 
 \end_inset

@@ -1,10 +1,10 @@
 ================
 ``NotebooksRun``
 ================
-.. automodule:: NumEcon.NotebooksRun
+.. automodule:: numecon.NotebooksRun
 
-``NumEcon.NotebooksRun.run`` module
+``numecon.NotebooksRun.run`` module
 --------------------------------
 
-.. automodule:: NumEcon.NotebooksRun.run
+.. automodule:: numecon.NotebooksRun.run
 

@@ -9,7 +9,7 @@ def cli():
 
 @cli.group("Notebook")
 def notebook():
-    """Run NumEcons notebooks locally and with mybinder.org"""
+    """Run numecons notebooks locally and with mybinder.org"""
     pass
 
 
@@ -21,7 +21,7 @@ def notebook():
     help="Path to ipython notebook within the Notebook directory",
 )
 def mybinder(ipynb=None):
-    """Run NumEcons notebook on mybinder.org.
+    """Run numecons notebook on mybinder.org.
     
     Your default browser will try to open a new tab or a new window. 
     """
@@ -39,7 +39,7 @@ def mybinder(ipynb=None):
     "-p",
     "--path",
     type=click.Path(exists=True),
-    help="Will copy all NumEcons notebooks to this path, and open a jupyter notebook at the location",
+    help="Will copy all numecons notebooks to this path, and open a jupyter notebook at the location",
 )
 def run(ipynb=None, path=None):
     """Run jupyter notebook locally.
