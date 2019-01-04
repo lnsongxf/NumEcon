@@ -15,4 +15,4 @@ dependencies:
   - rise
   - pip:
     - jupyter-contrib-nbextensions
-    - git+https://github.com/numeconCopenhagen/numecon
+    - git+https://github.com/NumEconCopenhagen/NumEcon
