@@ -8,3 +8,12 @@ sphinx
 sphinx_click
 virtualenv==16.2.0
 watchdog
+requests
+numba
+numpy
+pandas
+scipy
+matplotlib
+seaborn  
+ipywidgets
+rise
