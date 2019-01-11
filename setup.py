@@ -8,9 +8,6 @@ import subprocess
 import threading
 import time
 
-from watchdog import observers
-from watchdog import events
-
 
 class BlackCommand(distutils.cmd.Command):
     """A custom command to format python code"""
@@ -62,12 +59,6 @@ class DocsCommand(distutils.cmd.Command):
         else:
             subprocess.check_call(shlex.split(command), cwd="docs")
 
-
-class PipWatch(events.PatternMatchingEventHandler):
-    def on_any_event(self, event):
-        subprocess.check_call(shlex.split("pip install ."))
-
-
 class WatchCommand(distutils.cmd.Command):
     """A custom command to format python code"""
 
@@ -83,38 +74,8 @@ class WatchCommand(distutils.cmd.Command):
         pass
 
     def run(self):
-        event_handler = PipWatch("*.py")
-        observer = observers.Observer()
-        observer.schedule(event_handler, self.distribution.get_name(), recursive=True)
-        observer.start()
-        try:
-            while True:
-                time.sleep(5)
-        except KeyboardInterrupt:
-            observer.stop()
-
-
-class JupyterCommand(distutils.cmd.Command):
-    description = "Jupyter"
-    user_options = []
-
-    def initialize_options(self):
-        """Set default values for options."""
-        pass
-
-    def finalize_options(self):
-        """Post-process options."""
-        pass
-
-    def run(self):
-        threading.Thread(
-            target=lambda: subprocess.run(
-                shlex.split("jupyter notebook numecon/Notebooks")
-            )
-        ).start()
-        threading.Thread(
-            target=lambda: subprocess.run(shlex.split("python setup.py watch"))
-        ).start()
+        command = "python scripts/watcher.py"
+        subprocess.check_call(shlex.split(command))
 
 
 setuptools.setup(
@@ -127,7 +88,6 @@ setuptools.setup(
     cmdclass={
         "black": BlackCommand,
         "docs": DocsCommand,
-        "jupyter": JupyterCommand,
         "watch": WatchCommand,
     },
 )
