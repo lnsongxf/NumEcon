@@ -59,6 +59,7 @@ class DocsCommand(distutils.cmd.Command):
         else:
             subprocess.check_call(shlex.split(command), cwd="docs")
 
+
 class WatchCommand(distutils.cmd.Command):
     """A custom command to format python code"""
 
@@ -83,11 +84,5 @@ setuptools.setup(
     version="0.1.0",
     author="Jakob Jul Elben, Jeppe Druedahl",
     packages=setuptools.find_packages(),
-    package_data={"numecon": ["Notebooks/*", "Notebooks/images/*"]},
-    entry_points={"console_scripts": ["numecon=numecon.__main__:cli"]},
-    cmdclass={
-        "black": BlackCommand,
-        "docs": DocsCommand,
-        "watch": WatchCommand,
-    },
+    cmdclass={"black": BlackCommand, "docs": DocsCommand, "watch": WatchCommand},
 )

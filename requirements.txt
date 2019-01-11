@@ -1,9 +1,10 @@
 black
 click
 m2r
-notebook
+pre-commit
 pytest
 pytest-runner
 sphinx
 sphinx_click
+virtualenv==16.2.0
 watchdog
