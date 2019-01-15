@@ -101,6 +101,8 @@ class KoopmanModel:
         ax.legend(loc="lower right")
         fig.tight_layout()
 
+        return fig,ax
+
 
 ###############
 # interactive #
