@@ -9,7 +9,7 @@ A code library with numerical models for undergraduate and master students of ec
 
 _The library is still early in its development, contributions are very welcome!_
 
-**Online course in Python:** [Introduction to programming and numerical analysis](https://numeconcopenhagen.netlify.com/).
+**New to Python?:** Why out this online course, [Introduction to programming and numerical analysis](https://numeconcopenhagen.netlify.com/).
 
 ## Install
 
