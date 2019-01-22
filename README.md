@@ -11,7 +11,7 @@ _The library is still early in its development, contributions are very welcome!_
 
 **New to Python?** Thy out this online course, [Introduction to programming and numerical analysis](https://numeconcopenhagen.netlify.com/).
 
-Jupyter Notebooks showing the NumEcon library is availible in [NumEconNotebooks](https://github.com/NumEconCopenhagen/NumEconNotebooks) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NumEconCopenhagen/NumEconNotebooks/master?urlpath=lab) 
+**Jupyter Notebooks showing the NumEcon library is availible in [NumEconNotebooks](https://github.com/NumEconCopenhagen/NumEconNotebooks)** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NumEconCopenhagen/NumEconNotebooks/master?urlpath=lab) 
 
 ## Install
 
