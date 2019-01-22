@@ -9,7 +9,9 @@ A code library with numerical models for undergraduate and master students of ec
 
 _The library is still early in its development, contributions are very welcome!_
 
-**New to Python?:** Why out this online course, [Introduction to programming and numerical analysis](https://numeconcopenhagen.netlify.com/).
+**New to Python?** Why out this online course, [Introduction to programming and numerical analysis](https://numeconcopenhagen.netlify.com/).
+
+Jupyter Notebooks showing the NumEcon library is availible in [NumEconNotebooks](https://github.com/NumEconCopenhagen/NumEconNotebooks) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NumEconCopenhagen/NumEconNotebooks/master?urlpath=lab) 
 
 ## Install
 
@@ -18,8 +20,6 @@ NumEcon can be installed through pip:
 ```
 pip install numecon
 ```
-
-Jupyter Notebooks showing the NumEcon library is availible in [NumEconNotebooks](https://github.com/NumEconCopenhagen/NumEconNotebooks) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NumEconCopenhagen/NumEconNotebooks/master?urlpath=lab) 
 
 # Examples 
 
