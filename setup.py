@@ -81,7 +81,7 @@ class WatchCommand(distutils.cmd.Command):
 
 setuptools.setup(
     name="numecon",
-    version="0.1.0",
+    version="0.1.1",
     author="Jakob Jul Elben, Jeppe Druedahl",
     packages=setuptools.find_packages(),
     cmdclass={"black": BlackCommand, "docs": DocsCommand, "watch": WatchCommand},
